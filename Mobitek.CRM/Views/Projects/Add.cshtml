@@ -1,0 +1,49 @@
+﻿@using Mobitek.CRM.Models.ProjectModels
+@model ProjectAddViewModel
+@{
+    ViewBag.Title = $"Add {Model.Project}";
+}
+
+<section class="bootstrap-select">
+    <div class="row" id="mainRow">
+
+        <div class="col-12">
+            <div class="card">
+                <h4 class="card-title">Proje Ekle</h4>
+                <div class="card-header">
+                    <table class="table">
+                        <thead>
+                            <div class="panel-body">
+                                @*
+                                Bu bir asp-formudur.
+                                Bu formda sayfaya gelen modelin içi kullanıcıya doldurtulur veya explicit olarak tanımlanır.
+                                Formun başında modelin hangi controller'in hangi fonksiyonunun hangi methoduna ait olanı belirtilir (get, post)
+                                Type'i submit olan Save butonuna basıldığında bu model belirtilen post fonksiyonuna gönderilir, ve orda ekleme, editleme vb işlemleri yapılır.
+                                *@
+
+                                <form asp-controller="Projects" asp-action="Add" method="post">
+                                    <input hidden asp-for="Project.Id" />
+                                    <input hidden asp-for="Project.CreatedAt" />
+                                    <div>
+                                        <label asp-for="Project.Name">Proje Adı</label>
+                                        <input asp-for="Project.Name" />
+                                        <span asp-validation-for="Project.Name"></span>
+                                    </div>
+                                    <div>
+                                        <label asp-for="Project.Budget">Bütçe</label>
+                                        <input asp-for="Project.Budget" />
+                                        <span asp-validation-for="Project.Budget"></span>
+                                    </div>
+
+                                    <div>
+                                        <input type="submit" value="Save" />
+                                    </div>
+                                </form>
+                            </div>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

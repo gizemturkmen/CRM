@@ -1,0 +1,46 @@
+﻿@using Mobitek.CRM.Models.UserModels
+@model UserDetailViewModel
+
+@{
+
+    <section class="bootstrap-select">
+        <div class="row" id="mainRow">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Kullanıcı Bilgileri</h4>
+                    </div>
+                    <div class="row" style="padding:10px;">
+                        <div class="col">
+                            <label>Kullanıcı Adı</label>
+                            <p id="customerName" type="text" placeholder="Müşteri Adı" class="form-control" style="border-left:2px solid orange;margin-right:15px;">
+                        </div>
+                        <div class="col">
+                            <label>Açıklama</label>
+                            <p id="description" type="text" placeholder="Açıklama" class="form-control" style="border-left:2px solid orange;">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="card-header">
+                                    <h4 class="card-title"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <p>Model.ErrorMessage</p>
+}
+else
+{
+
+}

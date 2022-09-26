@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\CustomerVM\**" />
+    <Compile Remove="Views\Customers\**" />
+    <Content Remove="Models\CustomerVM\**" />
+    <Content Remove="Views\Customers\**" />
+    <EmbeddedResource Remove="Models\CustomerVM\**" />
+    <EmbeddedResource Remove="Views\Customers\**" />
+    <None Remove="Models\CustomerVM\**" />
+    <None Remove="Views\Customers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Seeds\" />
+  </ItemGroup>
+
+</Project>
